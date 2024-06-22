@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-glaizer-dev-202428-authRole",
+      "UnauthRoleArn": "arn:aws:iam::935460096122:role/amplify-glaizer-dev-202428-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::935460096122:role/amplify-glaizer-dev-202428-authRole",
+      "Region": "ap-south-1",
+      "DeploymentBucketName": "amplify-glaizer-dev-202428-deployment",
+      "UnauthRoleName": "amplify-glaizer-dev-202428-unauthRole",
+      "StackName": "amplify-glaizer-dev-202428",
+      "StackId": "arn:aws:cloudformation:ap-south-1:935460096122:stack/amplify-glaizer-dev-202428/0d0dc0e0-7fd9-11ee-8d71-02aaa6e3d4e2",
+      "AmplifyAppId": "d1jtzuq7cgjz3u"
+    },
+    "categories": {
+      "storage": {
+        "glaizer1329807a": {
+          "bucketName": "glaizer.public.content",
+          "region": "ap-south-1"
+        }
+      },
+      "auth": {
+        "glaizer00650593": {}
+      },
+      "function": {
+        "S3Trigger354aca01": {
+          "deploymentBucketName": "amplify-glaizer-dev-202428-deployment",
+          "s3Key": "amplify-builds/S3Trigger354aca01-723731496d5841517a6d-build.zip"
+        }
+      }
+    }
+  }
+}

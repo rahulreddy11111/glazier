@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "glaizer",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2024-01-12T04:48:54.753Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authglaizer00650593",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

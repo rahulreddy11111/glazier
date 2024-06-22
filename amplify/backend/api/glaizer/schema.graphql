@@ -1,0 +1,87 @@
+type Adminregconsole @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  Mac_id: String
+  Unique_id: String!
+  Password: String!
+  Manu_date: String
+  Min_price: Float
+  Max_price: Float!
+  Product_status: Boolean
+  Encripted_code: String
+  user_sub: String
+  activity_status: String
+}
+
+type UserSideInterfaceOutputs @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  Unique_id: String!
+  Service_Req: [String!]
+  Name: String!
+  Phone_no: Int!
+  Address: String
+  City: String
+  Pin_code: Int!
+  Country: String!
+  userSub: String!
+  Adminregconsole: Adminregconsole @hasOne
+  Product_id: String
+  password: String
+}
+
+type CartProduct @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userSub: String!
+  quantity: Int!
+  option: String
+  productID: ID!
+  wishlist: Boolean
+  product: Product @hasOne
+}
+
+type Productitems @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  title: String!
+  avgRating: Float
+  ratings: Int
+  price: Float
+  oldPrice: Float
+  description: String
+  images: [String]
+  options: [String]
+  image: String
+}
+
+type Product @model @auth(rules: [{allow: public}, {allow: owner}]) {
+  id: ID!
+  water_quantity: Int
+  tds_registered: Int
+  Ph_reg: Float
+  user_sub: String
+  Adminregconsole: Adminregconsole @hasOne
+  Product_id: String!
+  Sold_Price: Float
+  Sold_Date: String
+  Status: Boolean
+  Product_TDS_condition: [String]
+  Product_Water_condition: String
+}
+
+type Blog @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  posts: [Post] @hasMany
+}
+
+type Post @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  blog: Blog @belongsTo
+  comments: [Comment] @hasMany
+}
+
+type Comment @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  post: Post @belongsTo
+  content: String!
+}
+ 
